@@ -1,26 +1,5 @@
 #!/usr/bin/env python3
-"""
-CSV/TXT/HTML COOKIE-CUTTER GUI (Tkinter)
----------------------------------------
-A simple GUI app to:
-- Load a .txt or .html file (site dump / saved page)
-- Define OUTPUT FIELDS (columns)
-- For each field, add regex rules (extract/transform)
-- Apply global cleaning rules (trim/collapse/max_len/drop patterns)
-- Preview the first N rows
-- Export to CSV
-- Save/Load your rules as a JSON "profile"
 
-How "regex rules" work (per field):
-- Each field has an ordered list of rules.
-- A rule is one of:
-  1) EXTRACT: regex capture group -> becomes the field value
-  2) REPLACE: regex substitution on the current field value
-- You can chain multiple rules per field.
-
-Requires for HTML input:
-  pip install beautifulsoup4
-"""
 
 import csv
 import json
@@ -32,7 +11,7 @@ from dataclasses import dataclass, asdict
 from typing import List, Dict, Optional, Any
 
 # -----------------------------
-# Optional HTML -> text
+# HTMLtext
 # -----------------------------
 def html_to_text(html: str) -> str:
     try:
